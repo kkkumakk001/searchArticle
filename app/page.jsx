@@ -1,9 +1,12 @@
+"use client";
+import { usePathname } from "next/navigation";
+
 export default function Top() {
-  const test = "test";
-  console.log(test);
+    const pathName = usePathname();
+
   return (
     <div>
-      <h2>トップページ</h2>
+          <p>{pathName}</p>
     </div>
   )
 }
