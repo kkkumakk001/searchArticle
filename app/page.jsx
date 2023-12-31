@@ -1,12 +1,10 @@
-"use client";
-import { usePathname } from "next/navigation";
+"use client"
+import PagenationButton from "./components/PagenationButton/Pagenation"
 
 export default function Top() {
-    const pathName = usePathname();
-
   return (
-    <div>
-          <p>{pathName}</p>
-    </div>
-  )
+    <>
+      <PagenationButton></PagenationButton>
+    </>
+  );
 }
