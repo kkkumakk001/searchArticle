@@ -13,7 +13,7 @@ export default function PagenationButton() {
   }
 
   return (
-    <div class="pagenation">
+    <div className="pagenation">
       <Stack spacing={2}>
       <Pagination count={10} variant="outlined" shape="rounded" onClick={(e)=>changeType(e)} hidePrevButton hideNextButton />
     </Stack>
