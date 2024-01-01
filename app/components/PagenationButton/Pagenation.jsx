@@ -2,6 +2,7 @@
 import { React, useState } from 'react';
 import Pagination from '@mui/material/Pagination';
 import Stack from '@mui/material/Stack';
+// import style from "./PagenationButton.module.scss"
 
 export default function PagenationButton() {
   const [pageNumber, setPageNumber] = useState(1);
@@ -14,7 +15,7 @@ export default function PagenationButton() {
 
   return (
     <div className="pagenation">
-      <Stack spacing={2}>
+    <Stack spacing={2}>
       <Pagination count={10} variant="outlined" shape="rounded" onClick={(e)=>changeType(e)} hidePrevButton hideNextButton />
     </Stack>
     </div>
