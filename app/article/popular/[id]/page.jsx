@@ -10,7 +10,7 @@ export default function PopularArticle() {
   return (
     <div>
       <p>{pathName}</p>
-      <Articles pageNumber={pageNumber}></Articles>
+      <Articles pageNumber={pageNumber} sort="popular"></Articles>
     </div>
   )
 }

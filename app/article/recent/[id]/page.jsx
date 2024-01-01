@@ -1,12 +1,16 @@
 "use client";
-import { usePathname } from "next/navigation";
+import { useParams, usePathname } from "next/navigation";
+import Articles from "../../../components/Articles/Articles";
 
-export default function RecentArticle() {
-    const pathName = usePathname();
+export default function PopularArticle() {
+  const pathName = usePathname();
+  const params = useParams();
+  const pageNumber = Number(params.id);
 
   return (
     <div>
-          <p>{pathName}</p>
+      <p>{pathName}</p>
+      <Articles pageNumber={pageNumber} sort="recent"></Articles>
     </div>
   )
 }

@@ -2,11 +2,11 @@
 import { useState, Suspense } from "react";
 import { usePathname } from "next/navigation";
 import cls from "./Articles.module.scss";
-import useFetchArticles from "../../hook/useFetchArticles";
+import useFetchArticles from "../../hook/useFetchArticlesAll";
 
-export default function Articles({pageNumber=1}) {
-  const [tagId, setTagId] = useState("react");
-    const { articles } = useFetchArticles(pageNumber);
+export default function Articles({pageNumber = 1, sort}) {
+  const [tagId, setTagId] = useState("");
+    const { articles } = useFetchArticles(pageNumber, sort);
   const pathName = usePathname();
     
 
