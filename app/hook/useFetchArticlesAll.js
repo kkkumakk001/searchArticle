@@ -2,7 +2,7 @@ import { useEffect, useState } from "react";
 
 export default function useFetchArticles(pageNumber, sort) {
   const [articles, setArticles] = useState([]);
-  const qiitaApiUrl = `https://qiita.com/api/v2/items?page=${pageNumber}&per_page=100`;
+  const qiitaApiUrl = `https://qiita.com/api/v2/items?page=${pageNumber}&per_page=10`;
     console.log(qiitaApiUrl);
     console.log(sort);
 
