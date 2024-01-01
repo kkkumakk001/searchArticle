@@ -1,9 +1,9 @@
 import { useEffect, useState } from "react";
 
-export default function useFetchArticles(tag, pageNumber) {
+export default function useFetchArticles(pageNumber) {
   const [articles, setArticles] = useState([]);
   const qiitaApiUrl = `https://qiita.com/api/v2/items?page=${pageNumber}&per_page=20`;
-  console.log(qiitaApiUrl);
+//   console.log(qiitaApiUrl);
 
   const fetchArticles = async () => {
     try {
@@ -15,15 +15,14 @@ export default function useFetchArticles(tag, pageNumber) {
       const json = await res.json();
       json.sort((a, b) => b.likes_count - a.likes_count); //人気順に並べる、これと同じ感覚で投稿順にするソート関数を作る
       setArticles(json);
-      console.log(json);
-      console.log(tag);
+    //   console.log(json);
     } catch (e) {
       console.log("エラー", e);
-    }
+    } 
   };
 
   useEffect(() => {
-    fetchArticles();
+      fetchArticles();
   }, []);
 
   return { articles, fetchArticles };
