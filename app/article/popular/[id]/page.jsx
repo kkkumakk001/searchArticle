@@ -1,6 +1,7 @@
 "use client";
 import { useParams, usePathname } from "next/navigation";
 import Articles from "../../../components/Articles/Articles";
+import PagenationButton from "../../../components/PagenationButton/Pagenation"
 
 export default function PopularArticle() {
   const pathName = usePathname();
@@ -11,6 +12,7 @@ export default function PopularArticle() {
     <div>
       <p>{pathName}</p>
       <Articles pageNumber={pageNumber} sort="popular"></Articles>
+      <PagenationButton></PagenationButton>
     </div>
   )
 }
