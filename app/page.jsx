@@ -1,10 +1,9 @@
 "use client"
-import PagenationButton from "./components/PagenationButton/Pagenation"
 
 export default function Top() {
   return (
     <>
-      <PagenationButton></PagenationButton>
+      <div style={{fontSize: "32px"}}>Home Page</div>
     </>
   );
 }
