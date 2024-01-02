@@ -1,18 +1,19 @@
 "use client";
-import { useParams, usePathname } from "next/navigation";
-import Articles from "../../../components/Articles/Articles";
-import PagenationButton from "../../../components/PagenationButton/Pagenation"
+import { useParams } from "next/navigation";
+// import Articles from "../../../components/Articles/Articles";
+import Pagenation from "../../../components/Pagenation/Pagenation"
+import SortButton from "../../../components/SortButton/SortButton"
 
 export default function PopularArticle() {
-  const pathName = usePathname();
   const params = useParams();
-  const pageNumber = Number(params.id);
+  const propspageNumber = Number(params.id);
+  // console.log(pageNumber);
 
   return (
     <div>
-      <p>{pathName}</p>
-      <Articles pageNumber={pageNumber} sort="popular"></Articles>
-      <PagenationButton></PagenationButton>
+      <SortButton></SortButton>
+      {/* <Articles pageNumber={pageNumber} sort="popular"></Articles> */}
+      <Pagenation propspageNumber={propspageNumber}></Pagenation>
     </div>
   )
 }
