@@ -1,13 +1,13 @@
 import { useEffect, useState } from "react";
 
 export default function useFetchArticles(pageNumber, sort) {
-  const [articles, setArticles] = useState([]);
-  const qiitaApiUrl = `https://qiita.com/api/v2/items?page=${pageNumber}&per_page=10`;
-    console.log(qiitaApiUrl);
-    console.log(sort);
-
-  const fetchArticles = async () => {
-    try {
+  const [jsonData, setJsonData] = useState([]);
+  // const qiitaApiUrl = `https://qiita.com/api/v2/tags/firebase/items?page=${pageNumber}&per_page=10`;
+    // console.log(qiitaApiUrl);
+    
+    const fetchArticles = async () => {
+      const qiitaApiUrl = `https://qiita.com/api/v2/tags/firebase/items?page=${pageNumber}&per_page=10`;
+      try {
       const res = await fetch(qiitaApiUrl, {
         headers: {
           Authorization: "Bearer d3ced855b02d6fc773fd235f17375dbc4fa00742",
@@ -17,16 +17,17 @@ export default function useFetchArticles(pageNumber, sort) {
       if (sort === "popular") {
           json.sort((a, b) => b.likes_count - a.likes_count);
       }
-        setArticles(json);
-    //   console.log(json);
+        setJsonData(json);
+        // console.log(qiitaApiUrl);
     } catch (e) {
       console.log("エラー", e);
     } 
-  };
-
+    };
+  
   useEffect(() => {
-      fetchArticles();
-  }, []);
+    fetchArticles();
+  }, [])
 
-  return { articles, fetchArticles };
+
+  return { jsonData, fetchArticles };
 }
