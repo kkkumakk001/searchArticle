@@ -10,7 +10,7 @@ export default function PopularArticle() {
   return (
     <div>
       <SortButton></SortButton>
-      <Pagenation paramsId={paramsId}></Pagenation>
+      <Pagenation paramsId={paramsId} sort="popular"></Pagenation>
     </div>
   )
 }
