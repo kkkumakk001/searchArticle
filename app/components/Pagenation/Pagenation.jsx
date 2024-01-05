@@ -11,7 +11,7 @@ export default function Pagenation({ paramsId, sort }) {
 
   const routerPush = (e) => {
     const num = Number(e.target.textContent);
-    router.push(`/article/popular/${num}`);
+    router.push(`/article/${sort}/${num}`);
   }
 
   return (
