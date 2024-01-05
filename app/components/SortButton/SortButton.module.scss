@@ -1,0 +1,26 @@
+.buttonSection {
+    text-align: center;
+}
+
+.buttonWrapper {
+    display: inline-block;
+    .button:nth-child(1) {
+        margin-right: 10px;
+    }
+}
+
+.button {
+    padding: 10px 20px;
+    border-radius: 5px;
+    font-size: 14px;
+    font-weight: 500;
+}
+
+.currentButton {
+    background-color: blue;
+    color: white;
+}
+.nonCurrentButton {
+    background-color: #eee;
+    color: black;
+}
