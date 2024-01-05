@@ -1,13 +1,11 @@
 "use client";
 import { useState, Suspense } from "react";
-import { usePathname } from "next/navigation";
 import cls from "./Articles.module.scss";
 import useFetchArticles from "../../hook/useFetchArticlesAll";
 
 export default function Articles({pageNumber = 1, sort=""}) {
   const { jsonData, fetchArticles } = useFetchArticles(pageNumber, sort);
   const [tagId, setTagId] = useState("");
-  const pathName = usePathname();
     
   const changeTagid = (e) => {
     setTagId(e.target.innerText);
@@ -16,7 +14,6 @@ export default function Articles({pageNumber = 1, sort=""}) {
   return (
     <Suspense fallback={<p>Loading feed...</p>}>
       <section className={cls.blog_wrap}>
-        <h1 className="section_title">{pathName}</h1>
         {/* <p className={cls.tagId}>'{tagId}'で検索</p> */}
         <ul className={cls.card_ul}>
           {jsonData.map((data, index) => {
@@ -59,7 +56,6 @@ export default function Articles({pageNumber = 1, sort=""}) {
                     );
                   })}
                 </div>
-                <p>likes_count: {data.likes_count}</p>
               </li>
             );
           })}
