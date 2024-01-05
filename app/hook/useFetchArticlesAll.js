@@ -2,8 +2,6 @@ import { useEffect, useState } from "react";
 
 export default function useFetchArticles(pageNumber, sort) {
   const [jsonData, setJsonData] = useState([]);
-  // const qiitaApiUrl = `https://qiita.com/api/v2/tags/firebase/items?page=${pageNumber}&per_page=10`;
-    // console.log(qiitaApiUrl);
     
     const fetchArticles = async () => {
       const qiitaApiUrl = `https://qiita.com/api/v2/tags/firebase/items?page=${pageNumber}&per_page=10`;
@@ -18,7 +16,6 @@ export default function useFetchArticles(pageNumber, sort) {
           json.sort((a, b) => b.likes_count - a.likes_count);
       }
         setJsonData(json);
-        // console.log(qiitaApiUrl);
     } catch (e) {
       console.log("エラー", e);
     } 
