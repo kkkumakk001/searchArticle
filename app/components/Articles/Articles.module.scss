@@ -10,8 +10,8 @@ a.linkUrl {
     display: block;
 }
 .blog_wrap {
-    margin: 30px auto;
-    width: 90%;
+    margin: 0px auto;
+    // width: 90%;
 }
 .userInfo_01 {
     display: inline-block;
@@ -33,12 +33,17 @@ a.linkUrl {
     font-size: 12px;
 }
 .card {
-    border-radius: 20px;
-    border: 2px solid #9eddff;
+    border-radius: 10px;
+    // border: 2px solid #9eddff;
     padding: 16px 16px 12px;
-    background-color: #fff;
+    // background-color: #fff;
     width: 47.5%;
-    margin-bottom: 1em;
+    margin-bottom: 32px;
+    background-color: rgba(158, 221, 255, 0.15);
+    &:hover {
+        background-color: rgba(158, 221, 255, 0.3);
+        cursor: pointer;
+    }
 }
 .card_title {
     font-weight: 600;
@@ -60,7 +65,9 @@ a.linkUrl {
     margin-right: 4px;
     margin-bottom: 4px;
     border-radius: 16px;
-    cursor: pointer;
+    &:hover {
+        text-decoration: underline;
+    }
 }
 .tagId {
     margin-bottom: 20px;
