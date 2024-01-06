@@ -8,7 +8,7 @@ export default function SortButton() {
   console.log(pathname);
 
   return (
-    <section className={style.buttonSection}>
+    <div className={style.buttonSection}>
       <div className={style.buttonWrapper}>
         <button
           className={`${style.button} ${pathname.includes("recent") ? style.currentButton : style.nonCurrentButton}`}
@@ -19,6 +19,6 @@ export default function SortButton() {
           className={`${style.button} ${pathname.includes("popular") ? style.currentButton : style.nonCurrentButton}`}
           onClick={() => router.push("/article/popular/01")}>人気記事</button>
       </div>
-    </section>
+    </div>
   );
 }
