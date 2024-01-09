@@ -11,10 +11,11 @@ export default function Top() {
   return (
     <main className={style.mainContainer}>
       <h2 className={style.articleNav} onClick={() => router.push("/article/recent/01")}>新着記事</h2>
-      <ReadMore><Articles sort="recent"></Articles></ReadMore>
+      <ReadMore height="600px"><Articles sort="recent"></Articles></ReadMore>
       <h2 className={style.articleNav} onClick={() => router.push("/article/popular/01")}>人気記事</h2>
-      <ReadMore><Articles sort="popular"></Articles></ReadMore>
-      <Categorys></Categorys>
+      <ReadMore height="600px"><Articles sort="popular"></Articles></ReadMore>
+      <h2 className={style.articleNav} onClick={() => router.push("/category")}>人気記事</h2>
+      <ReadMore height="400px"><Categorys></Categorys></ReadMore>
     </main>
   );
 }
