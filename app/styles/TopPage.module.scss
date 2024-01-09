@@ -1,13 +1,27 @@
 .articleNav {
-    // display: inline-block;
-    // width: 200px;
+    color: #fff;
     text-align: center;
-    margin: 30px auto 0;
-    padding: 12px 0;
-    border-top: 1px solid #9eddff;
-    border-bottom: 1px solid #9eddff;
-    &:hover {
-        background-color: rgba(250, 250, 250, 0.5);
+    min-width: 150px;
+    width: 25%;
+    font-weight: bold;
+    padding: 0.5em 1em;
+    margin-bottom: 30px;
+    background-color: #071952;
+    position: relative;
+
+    &:first-child {
+        margin-top: 30px;
+    }
+
+    &::after {
+        content: "";
+        position: absolute;
+        right: 0;
+        top: 0;
+        border-width: 0 20px 20px 0;
+        border-style: solid;
+        border-color: rgba(158, 221, 255, 1) #fff rgba(158, 221, 255, 1);
+        box-shadow: -1px 1px 1px rgba(0, 0, 0, 0.15);
     }
 }
 

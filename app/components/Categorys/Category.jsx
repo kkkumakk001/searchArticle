@@ -3,10 +3,9 @@ import categoryDatas from "../../Datas/categoryDatas";
 import style from "./Category.module.scss";
 
 export default function Categorys() {
-  const { programmingLanguages, framework, other } = categoryDatas();
+  const { framework } = categoryDatas();
   return (
-      <div className={style.category_wrapper}>
-        <h2 className={style.category_title}>カテゴリ一覧</h2>  
+      <div className={style.category_wrapper}>  
         <ul className={style.ul}>
             {framework.map((data, index) => {
                 return (
