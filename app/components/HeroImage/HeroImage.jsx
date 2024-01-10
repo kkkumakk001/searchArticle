@@ -26,8 +26,8 @@ export default function HeroImage() {
                 <p>メモもできる</p>
               </span>
               <span className={style.hero_desc}>
-                  <p>ブックマークやメモを残して復習に。</p>
-                  <p>タグ検索で探す時間を短縮。</p>
+                  <p>ブックマークやメモを残して復習に</p>
+                  <p>タグ検索で探す時間を短縮</p>
               </span>
               {authInfo ? null : (<button className={style.login_button}>ログイン</button>)}
         </div>  
