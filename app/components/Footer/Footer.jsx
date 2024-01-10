@@ -1,5 +1,6 @@
 "use client";
 import { useRouter } from "next/navigation";
+import Link from 'next/link'
 import style from "./Footer.module.scss";
 import Image from "next/image";
 import siteLogo from "../../../public/images/siteLogo.jpg"
@@ -78,8 +79,9 @@ const router = useRouter();
                             onClick={()=>router.push("#")}
                         ></Image></li>
                 </ul>
-              <p className={style.siteInfo} onClick={()=>router.push("/about")}>本サイトについて</p>
-              <p>&copy; @kkkumakk001(Github)</p>
+              <p className={style.siteInfo} onClick={() => router.push("/about")}>本サイトについて</p>
+              <Link className={style.license} href="https://storyset.com/web" rel="noopener noreferrer" target="_blank">Web illustrations by Storyset</Link>
+              <p style={{textAlign: "center"}}>&copy; 2024 @kkkumakk001(Github)</p>
             </nav>
       </footer>
   )

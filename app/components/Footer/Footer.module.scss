@@ -42,9 +42,18 @@
     }
 }
 
-.siteInfo {
-    margin-bottom: 14px;
+.siteInfo,
+.license {
     &:hover {
         text-decoration: underline;
     }
+}
+
+.license {
+    display: inline-block;
+    margin-bottom: 56px;
+}
+
+.siteInfo {
+    margin-bottom: 14px;
 }
