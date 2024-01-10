@@ -19,6 +19,11 @@
     transform: translateX(-50%);
     cursor: pointer;
     z-index: 1;
+    transition: 0.3s;
+
+    &:hover {
+        background-color: #071952;
+    }
 }
 
 .readmore input[type="checkbox"] {
