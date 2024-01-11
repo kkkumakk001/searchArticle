@@ -4,7 +4,7 @@ export default function useFetchArticles(pageNumber, sort) {
   const [jsonData, setJsonData] = useState([]);
     
     const fetchArticles = async () => {
-      const qiitaApiUrl = `https://qiita.com/api/v2/tags/react/items?page=${pageNumber}&per_page=40`;
+      const qiitaApiUrl = `https://qiita.com/api/v2/tags/react/items?page=${pageNumber}&per_page=20`;
       try {
       const res = await fetch(qiitaApiUrl, {
         headers: {

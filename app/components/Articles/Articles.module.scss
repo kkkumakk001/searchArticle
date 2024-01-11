@@ -11,7 +11,6 @@ a.linkUrl {
 }
 .blog_wrap {
     margin: 0px auto;
-    // width: 90%;
 }
 .userInfo_01 {
     display: inline-block;
@@ -34,10 +33,11 @@ a.linkUrl {
 }
 .card {
     border-radius: 10px;
-    // border: 2px solid #9eddff;
     padding: 16px 16px 12px;
-    // background-color: #fff;
     width: 47.5%;
+    @media screen and (max-width: 640px) {
+        width: 100%;
+    }
     margin-bottom: 32px;
     background-color: rgba(158, 221, 255, 0.15);
     &:hover {

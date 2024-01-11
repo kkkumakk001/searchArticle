@@ -1,5 +1,5 @@
 "use client"
-import { React, useEffect, useState } from 'react';
+import { React, useState } from 'react';
 import Pagination from '@mui/material/Pagination';
 import { useRouter } from "next/navigation";
 import Stack from '@mui/material/Stack';
@@ -19,9 +19,11 @@ export default function Pagenation({ paramsId, sort }) {
     <section className="pagenation">
       <div className={style.container}>
         <Articles pageNumber={pageNumber} sort={sort}></Articles>
-        <Stack spacing={2}>
-          <Pagination count={100} page={pageNumber} variant="outlined" shape="rounded" onClick={(e)=>routerPush(e)} hidePrevButton hideNextButton />
-        </Stack>
+        <span className={style.pagenation_button}>
+          <Stack spacing={2}>
+            <Pagination count={100} page={pageNumber} variant="outlined" shape="rounded" onClick={(e)=>routerPush(e)} hidePrevButton hideNextButton />
+          </Stack>
+        </span>
       </div>
     </section>
   );

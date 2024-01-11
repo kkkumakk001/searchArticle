@@ -1,5 +1,6 @@
 import './globals.css'
 import "./styles/Pagenation.scss"
+import "./styles/layout.scss"
 // import type { Metadata } from 'next'
 import { Inter } from 'next/font/google'
 import HeaderComponent from "./components/Header/Header.jsx"
