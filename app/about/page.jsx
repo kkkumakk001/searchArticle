@@ -25,7 +25,7 @@ export default function About() {
           <ul className={style.ul}>
               {datas.map((data, index) => {
                 return (
-                <li className={style.li}>
+                <li className={style.li} key={index}>
                     <div className={style.li_content}>
                       <div className={style.li_title}>
                         <div className={style.li_number}><span>{`0${index + 1}`}</span></div> 
