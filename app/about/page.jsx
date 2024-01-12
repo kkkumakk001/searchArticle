@@ -9,7 +9,7 @@ export default function About() {
         text: "トレンドや新着の記事、タグ検索、任意のワード検索など基本的な機能を用意しています。"
       },
       {
-        mainTitle: "ブックマーク、メモ",
+        mainTitle: "ブックマーク",
         subTitle: "Bookmark & Memo",
         text: "ブックマーク機能だけではなく、同時にメモも記しておくことで振り返りが楽に。"
       },

@@ -2,25 +2,24 @@
     padding-top: 100px;
     background-color: #eee;
 }
-
 .ul {
     width: 90%;
     max-width: 1080px;
     margin: 0 auto;
     padding-bottom: 30px;
 }
-
 .li {
     display: flex;
     flex-wrap: wrap;
     margin-bottom: 30px;
-    height: 300px;
-
+    height: auto;
     &_content,
     &_img {
         width: 50%;
+        @media screen and (max-width: 768px) {
+            width: 100%;
+        }
     }
-
     &_content {
         display: flex;
         flex-direction: column;
@@ -30,25 +29,18 @@
         text-align: justify;
         text-justify: inter-ideograph;
     }
-
     &_img {
         background-color: #6499e9;
+        height: 300px;
     }
-
     &_number {
         font-size: 48px;
         font-weight: bold;
         margin-right: 10px;
     }
-
     &_title {
         display: flex;
     }
-
-    // &_text {
-    //     width: 100%;
-    // }
-
     &_titleText {
         &_main {
             font-size: 32px;
