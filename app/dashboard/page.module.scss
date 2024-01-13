@@ -1,0 +1,114 @@
+.dashboard_page {
+    padding: 30px 0;
+    width: 90%;
+    max-width: 1080px;
+    margin: 0 auto;
+}
+
+.dashboard_wrapper {
+    padding: 100px 0;
+    width: 95%;
+    margin: 0 auto;
+}
+
+.userInformation {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    max-width: 600px;
+    padding: 0 30px;
+    margin: 0 auto 50px;
+    @media screen and (max-width: 640px) {
+        text-align: center;
+    }
+}
+
+.userIcon_block {
+    height: 200px;
+    width: 200px;
+    @media screen and (max-width: 640px) {
+        width: 100%;
+    }
+}
+
+.userIcon {
+    border-radius: 50%;
+}
+
+.userInfo {
+    padding-left: 30px;
+    width: calc(100% - 200px);
+    @media screen and (max-width: 640px) {
+        width: 100%;
+        padding-left: 0;
+    }
+}
+
+.userName {
+    font-size: 24px;
+    font-weight: bold;
+    margin-bottom: 6px;
+}
+
+.userId {
+    font-size: 14px;
+    font-weight: bold;
+    color: rgba(0, 0, 0, 0.5);
+    margin-bottom: 14px;
+}
+
+.logoutButton {
+    padding: 8px 16px;
+    color: #fff;
+    background-color: orange;
+    border-radius: 16px;
+}
+
+.bookmarks {
+    &_head {
+        padding-bottom: 8px;
+        border-bottom: 1px solid rgba(0, 0, 0, 0.2);
+    }
+
+    &_title {
+        font-weight: 500;
+        display: inline-block;
+        margin-right: 16px;
+    }
+
+    &_sort_wrapper {
+        position: relative;
+        display: inline-block;
+
+        &::before {
+            content: "";
+            display: inline-block;
+            width: 16px;
+            height: 16px;
+            background: url(../../public/images/searchIcon.png) no-repeat center center / auto 100%;
+            display: inline-block;
+            position: absolute;
+            top: 8px;
+            left: 16px;
+            pointer-events: none;
+        }
+    }
+
+    &_sort {
+        width: 300px;
+        height: 2em;
+        padding: 8px 16px 8px 40px;
+        background-color: rgba(245, 245, 245, 0.5);
+
+        &::placeholder {
+            opacity: 0;
+        }
+        &:focus {
+            outline: none;
+            &::placeholder {
+                opacity: 1;
+            }
+        }
+    }
+}
