@@ -8,7 +8,7 @@ import { useTagUpdateContext } from "../context/TagContext"
 export default function CategoryAll() {
     const setAuth = useTagUpdateContext();
     const router = useRouter();
-  const { programmingLanguages, framework, other } = categoryDatas();
+    const { programmingLanguages, framework, other } = categoryDatas();
     const categoryAll = [...programmingLanguages, ...framework, ...other];
     const goTagPAge = (data) => {
         setAuth(data.name)
@@ -30,7 +30,9 @@ export default function CategoryAll() {
                             width={50}
                             quality={90}
                             priority={true}
-                            onClick={goTagPAge(data)}
+                            onClick={() => {goTagPAge(data)}}
+                            // onClick={`/category/dammy/popular/1`}
+                            // onClick={router.push(`/category/fail/popular/1`)}
                         ></Image>
                         <p className={style.li_name}>{ data.name }</p>    
                     </li>

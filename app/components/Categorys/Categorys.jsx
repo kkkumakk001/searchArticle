@@ -6,14 +6,17 @@ import categoryDatas from "../../Datas/categoryDatas";
 import style from "./Category.module.scss";
 
 export default function Categorys() {
-    const { framework } = categoryDatas();
+    const { programmingLanguages } = categoryDatas();
     const router = useRouter()
+    const goTagPage = (data) => {
+        router.push(`/category/${data.name}/popular/01`)
+    }
   return (
       <div className={style.category_wrapper}>  
         <ul className={style.ul}>
-            {framework.map((data, index) => {
+            {programmingLanguages.map((data, index) => {
                 return (
-                    <li className={style.li} key={index} onClick={router.push(`/category/${data.name}/popular/01`)}>
+                    <li className={style.li} key={index} onClick={() => {goTagPage(data)}}>
                         <Image
                             src={data.src}
                             alt="サイトロゴ"

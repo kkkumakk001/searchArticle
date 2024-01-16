@@ -8,7 +8,8 @@ import Articles from '../Articles/Articles';
 
 export default function Pagenation({ paramsId, sort, tag }) {
   const router = useRouter();
-  const [pageNumber, setPageNumber] = useState(paramsId);
+  const pageNumber = paramsId;
+  // const [pageNumber, setPageNumber] = useState(paramsId);
   console.log(tag)
 
   const routerPush = (e) => {

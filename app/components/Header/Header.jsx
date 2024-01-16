@@ -10,7 +10,7 @@ import userIcon from "../../../public/images/userIcon.png"
 
 
 export default function HeaderComponent() {
-  const [auth, setAuth] = useAuthContext();
+  const { auth } = useAuthContext()
   return (
         <header className={style.header}>
             <nav className={style.nav}>
@@ -36,8 +36,8 @@ export default function HeaderComponent() {
                   priority={true}
               ></Image>
               </Link>
+              <Link href="/dashboard">
               {auth ? (
-            <Link href="/dashboard">
               <Image
                   src={userIcon}
                   alt="ユーザーアイコン"
@@ -46,9 +46,9 @@ export default function HeaderComponent() {
                   quality={90}
                   priority={true}
               ></Image>
-            </Link>
               ) : (<button className={style.loginButton}>ログイン</button>)
-              }
+            }
+            </Link>
               </span>
             </nav>
         </header>

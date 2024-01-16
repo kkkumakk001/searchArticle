@@ -6,12 +6,10 @@ export const AuthContext = createContext();
 
 export const TagProvider = ({ children }) => {
     const [tag, setTag] = useState("firebase");
-    const [auth, setAuth] = useState(false);
-
-
+    const [auth, setAuth] = useState(true);
 
     return (
-        <AuthContext.Provider value={[auth, setAuth]}>
+        <AuthContext.Provider value={{ auth, setAuth }}>
             <TagContext.Provider value={tag}>
                 <TagUpdateContext.Provider value={setTag}>
                     { children }
