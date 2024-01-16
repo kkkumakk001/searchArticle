@@ -1,14 +1,18 @@
 "use client"
 
+import { useTagUpdateContext } from "../../context/TagContext"
 import Image from "next/image";
 import { useRouter } from "next/navigation"
 import categoryDatas from "../../Datas/categoryDatas";
 import style from "./Category.module.scss";
 
 export default function Categorys() {
+  const setTag = useTagUpdateContext()
     const { programmingLanguages } = categoryDatas();
     const router = useRouter()
     const goTagPage = (data) => {
+        const tagName = data.name
+        setTag(tagName);
         router.push(`/category/${data.name}/popular/01`)
     }
   return (
