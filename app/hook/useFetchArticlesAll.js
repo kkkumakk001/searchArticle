@@ -1,9 +1,12 @@
 import { useEffect, useState } from "react";
-
-export default function useFetchArticles(pageNumber, sort, tag) {
+export default function useFetchArticles({ pageNumber, sort, tag }) {
   const [jsonData, setJsonData] = useState([]);
     
   const fetchArticles = async () => {
+    let json = {};
+    console.log(pageNumber);
+    console.log(sort);
+    console.log(tag);
     // const qiitaApiUrl = `https://qiita.com/api/v2/items?page=${pageNumber}&per_page=100`;
     let qiitaApiUrl = "";
     if (tag == "") {
@@ -20,22 +23,20 @@ export default function useFetchArticles(pageNumber, sort, tag) {
         Authorization: "Bearer d3ced855b02d6fc773fd235f17375dbc4fa00742",
       },
     });
-    const json = await res.json();
+      json = await res.json();
     if (sort === "popular") {
         json.sort((a, b) => b.likes_count - a.likes_count);
     }
-      setJsonData(json);
     } catch (e) {
       console.log("エラー", e);
     }
-
+    return json;
     };
   
   useEffect(() => {
-    fetchArticles();
-    // console.log(qiitaApiUrl);
+    fetchArticles()
+      .then((json) => setJsonData(json));
   }, [])
 
-
-  return { jsonData, fetchArticles };
+  return { jsonData, setJsonData, fetchArticles };
 }

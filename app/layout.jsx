@@ -3,8 +3,9 @@ import "./styles/Pagenation.scss"
 import "./styles/layout.scss"
 // import type { Metadata } from 'next'
 import { Inter } from 'next/font/google'
-import HeaderComponent from "./components/Header/Header.jsx"
-import FooterComponent from "./components/Footer/Footer.jsx"
+import { TagProvider } from "./context/TagContext"
+import Header from "./components/Header/Header.jsx"
+import Footer from "./components/Footer/Footer.jsx"
 
 const inter = Inter({ subsets: ['latin'] })
 
@@ -17,9 +18,11 @@ export default function RootLayout({children}) {
   return (
     <html lang="en">
       <body className={inter.className}>
-        <HeaderComponent></HeaderComponent>
-        {children}
-        <FooterComponent></FooterComponent>
+        <TagProvider>
+          <Header></Header>
+          {children}
+          <Footer></Footer>
+        </TagProvider>
       </body>
     </html>
   )

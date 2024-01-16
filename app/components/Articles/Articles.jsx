@@ -1,22 +1,29 @@
 "use client";
-import { useState, Suspense } from "react";
+import { useTagUpdateContext } from "../../context/TagContext"
+import { Suspense, useEffect } from "react";
+import { useRouter } from "next/navigation";
 import cls from "./Articles.module.scss";
 import useFetchArticles from "../../hook/useFetchArticlesAll";
 
-export default function Articles({ pageNumber = 1, sort = "", tag = "" }) {
-  const { jsonData, fetchArticles } = useFetchArticles(pageNumber, sort, tag);
-  
-  const [tagId, setTagId] = useState(tag);
-    
+export default function Articles({ pageNumber = 1, sort = "", tag="" }) {
+  const setTag = useTagUpdateContext()
+  const router = useRouter();
+  const { jsonData } = useFetchArticles({ pageNumber, sort, tag });
+
+  useEffect(() => {
+  }, [])
+
   const changeTagid = (e) => {
-    setTagId(e.target.innerText);
+    const tagName = e.target.innerText
+    setTag(tagName);
+    router.push(`/category/${tagName}/popular/01`);
   };
   
   return (
     <Suspense fallback={<p>Loading feed...</p>}>
       <section className={cls.blog_wrap}>
         {tag ? (
-          <p className={cls.tagId}>'{tagId}'で検索</p>
+          <p className={cls.tagId}>'{tag}'で検索</p>
         ) : (
           null
         )}

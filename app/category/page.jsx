@@ -1,11 +1,19 @@
 'use client'
+import { useRouter } from "next/navigation";
 import categoryDatas from "../Datas/categoryDatas";
 import style from "./page.module.scss"
 import Image from "next/image";
+import { useTagUpdateContext } from "../context/TagContext"
 
 export default function CategoryAll() {
+    const setAuth = useTagUpdateContext();
+    const router = useRouter();
   const { programmingLanguages, framework, other } = categoryDatas();
-  const categoryAll = [...programmingLanguages, ...framework, ...other];
+    const categoryAll = [...programmingLanguages, ...framework, ...other];
+    const goTagPAge = (data) => {
+        setAuth(data.name)
+        router.push(`/category/${data.name}/popular/1`)
+    }
   
   return (
       <div className={style.category_page}>
@@ -22,7 +30,7 @@ export default function CategoryAll() {
                             width={50}
                             quality={90}
                             priority={true}
-                            // onClick={()=>router.push("/")}
+                            onClick={goTagPAge(data)}
                         ></Image>
                         <p className={style.li_name}>{ data.name }</p>    
                     </li>

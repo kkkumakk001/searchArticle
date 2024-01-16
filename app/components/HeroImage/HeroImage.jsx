@@ -1,12 +1,10 @@
 import { useState } from "react";
 import Image from "next/image";
-import { useRouter } from "next/navigation";
 import Hero from "../../../public/images/HeroImage.svg"
 import style from "./HeroImage.module.scss"
 
 
 export default function HeroImage() {
-  const router = useRouter();
   const [authInfo, setAuthInfo] = useState(false);
 
   return (

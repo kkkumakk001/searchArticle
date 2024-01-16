@@ -1,13 +1,11 @@
 "use client"
-import { useRouter } from "next/navigation";
 import style from "./styles/TopPage.module.scss"
 import ReadMore from "./components/ReadMore/ReadMore"
-import Categorys from "./components/Categorys/Category"
+import Categorys from "./components/Categorys/Categorys"
 import Articles from "./components/Articles/Articles";
 import HeroImage from "./components/HeroImage/HeroImage"
 
 export default function Top() {
-  const router = useRouter();
 
   return (
     <main className={style.mainContainer}>
