@@ -38,5 +38,9 @@
         &:not(:last-child) {
             margin-right: 7px;
         }
+
+        &:hover {
+            cursor: pointer;
+        }
     }
 }
