@@ -17,13 +17,19 @@ export default function CategoryAll() {
   
   return (
       <div className={style.category_page}>
-        <h2 className={style.category_page_title}>カテゴリ一覧</h2>
+          <h2 className={style.category_page_title}>カテゴリ一覧</h2>
+          
+          <div className={style.category_sort_wrapper}>
+              <label className={style.category_sort_label}>
+                <input className={style.category_sort} type="text" placeholder="検索"/>
+              </label>
+            </div>
+          
         <ul className={style.ul}>
             {categoryAll.map((data, index) => {
                 return (
                     <li className={style.li} key={index}>
                         <Image
-                            // className={style.siteLogo}
                             src={data.src}
                             alt="サイトロゴ"
                             height={50}
@@ -31,8 +37,6 @@ export default function CategoryAll() {
                             quality={90}
                             priority={true}
                             onClick={() => {goTagPAge(data)}}
-                            // onClick={`/category/dammy/popular/1`}
-                            // onClick={router.push(`/category/fail/popular/1`)}
                         ></Image>
                         <p className={style.li_name}>{ data.name }</p>    
                     </li>
