@@ -10,9 +10,9 @@ export default function useFetchArticles({ pageNumber, sort, tag }) {
     // const qiitaApiUrl = `https://qiita.com/api/v2/items?page=${pageNumber}&per_page=100`;
     let qiitaApiUrl = "";
     if (tag == "") {
-      qiitaApiUrl = `https://qiita.com/api/v2/items?page=${pageNumber}&per_page=100`;
+      qiitaApiUrl = `https://qiita.com/api/v2/items?page=${pageNumber}&per_page=40`;
     } else {
-      qiitaApiUrl = `https://qiita.com/api/v2/tags/${tag}/items?page=${pageNumber}&per_page=100`
+      qiitaApiUrl = `https://qiita.com/api/v2/tags/${tag}/items?page=${pageNumber}&per_page=40`
     }
 
     console.log(qiitaApiUrl)
