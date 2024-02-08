@@ -2,6 +2,7 @@ import './globals.css'
 import "./styles/Pagenation.scss"
 import "./styles/layout.scss"
 // import type { Metadata } from 'next'
+// import { Suspense } from "react";
 import { Inter } from 'next/font/google'
 import { TagProvider } from "./context/TagContext"
 import Header from "./components/Header/Header.jsx"

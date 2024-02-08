@@ -1,6 +1,6 @@
 // "use client";
 import { useTagUpdateContext } from "../../context/TagContext"
-import { Suspense } from "react";
+// import { Suspense } from "react";
 import { useRouter } from "next/navigation";
 import cls from "./Articles.module.scss";
 import useFetchArticles from "../../hook/useFetchArticlesAll";
@@ -15,9 +15,9 @@ export default function Articles({ pageNumber = 1, sort = "", tag="" }) {
     setTag(tagName);
     router.push(`/category/${tagName}/popular/01`);
   };
-  
+
   return (
-    <Suspense fallback={<p>Loading feed...</p>}>
+    // <Suspense fallback={<p>Loading feed...</p>}>
     <>  
       <section className={cls.blog_wrap}>
         {tag ? (
@@ -72,6 +72,6 @@ export default function Articles({ pageNumber = 1, sort = "", tag="" }) {
         </ul>
       </section>
     </>  
-    </Suspense>
+    // </Suspense>
   );
 }
