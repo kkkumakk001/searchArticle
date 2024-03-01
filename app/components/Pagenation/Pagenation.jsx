@@ -10,7 +10,7 @@ export default function Pagenation({ paramsId, sort, tag }) {
   const router = useRouter();
   const pageNumber = paramsId;
   // const [pageNumber, setPageNumber] = useState(paramsId);
-  console.log(tag)
+  // console.log(tag)
 
   const routerPush = (e) => {
     const num = Number(e.target.textContent);
